@@ -1,0 +1,9 @@
+builders:
+  moor_orm_generator:
+    import: "package:moor_orm_generator/integrations/build.dart"
+    builder_factories: ["moorOrmBuilder"]
+    build_extensions: {".dart": [".moor_orm.g.part"]}
+    auto_apply: dependents
+    build_to: cache
+    required_inputs: [".dart_in_moor"]
+    applies_builders: ["source_gen|combining_builder"]
